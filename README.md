@@ -1,4 +1,12 @@
-# React + Vite
+# Cineme
+
+### deploy
+
+https://cinemasfilm.netlify.app/discover
+
+### Data
+
+https://www.themoviedb.org/
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
