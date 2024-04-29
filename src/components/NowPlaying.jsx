@@ -7,7 +7,6 @@ import SpinerLoading from './SpinerLoading'
 import DbSourse from '../api/data/db-sourse'
 import Container from './Container'
 const MoviePlaying = () => {
-
     const [nowPlaying, setNowPlaying] = useState([])
     const [loading, setLoading] = useState(true);
 
@@ -27,7 +26,7 @@ const MoviePlaying = () => {
     return (
         <Container>
              <h2 className="text-3xl font-bold text-indigo-500 mb-6 text-center">
-                    Populer Muvie
+                   Now Palying Muvie
                 </h2>
                 {loading ? <SpinerLoading loading={loading}/> : (
 

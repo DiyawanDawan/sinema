@@ -18,10 +18,20 @@ class DbSourse {
       console.log(error);
     }
   }
-  static async Tranding() {
+  static async TrandingMuvies() {
     try {
-      const response = await fetch(API_ENDPOINT.TRADING, options);
+      const response = await fetch(API_ENDPOINT.TRADING_MUVIE, options);
       const responseJson = await response.json();
+      return responseJson.results;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  static async TrandingAll() {
+    try {
+      const response = await fetch(API_ENDPOINT.TRADING_ALL, options);
+      const responseJson = await response.json();
+      // console.log(responseJson);
       return responseJson.results;
     } catch (error) {
       console.log(error);
@@ -65,16 +75,7 @@ class DbSourse {
       console.log(error);
     }
   }
-  static async DiscoverTvVideo(id) {
-    try {
-      const response = await fetch(API_ENDPOINT.DETAIL_TV_Video(id), options);
-      const responseJson = await response.json();
-      // console.log(responseJson);
-      return responseJson;
-    } catch (error) {
-      console.log(error);
-    }
-  }
+ 
   // static async GenereMuvies() {
   //   try {
   //     const response = await fetch(API_ENDPOINT.GENERE_MUVIES, options);

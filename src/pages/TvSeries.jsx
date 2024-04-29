@@ -21,13 +21,7 @@ const TvSeries = () => {
     getTvSeries();
   });
 
-  useEffect(() => {
-    const getVideo = async () => {
-      const data = await DbSourse.DiscoverTvVideo(id)
-      console.log('video', data);
-    }
-    getVideo()
-  })
+
   return (
     <Container>
       <h2 className="font-bold text-indigo-700 text-center text-2xl mb-8">
@@ -50,7 +44,6 @@ const TvSeries = () => {
                 <Card.Header title={series.name} />
                 <Card.BodyCard>{series.overview}</Card.BodyCard>
                 <div className="flex flex-wrap justify-between">
-
                 <div className="mb-3 ">
                   <h2 className="font-bold text-2xl text-green-500 border-b-2 border-indigo-600">
                     Genere
@@ -137,9 +130,9 @@ const TvSeries = () => {
                         <div className="absolute bottom-4 right-0 text-center">
                           <div className="bg-gray-600 text-center p-3 rounded-s-xl">
                             <p className="font-bold text-green-400 border-b-2">
-                              Satatus Reresed
+                              Reresed
                             </p>
-                            <span className="text-yellow-500 font-medium px-6 h-5 pt-2 text-xl">
+                            <span className="text-yellow-500 font-medium px-6 h-5 pt-2">
                               {item.air_date}
                             </span>
                           </div>

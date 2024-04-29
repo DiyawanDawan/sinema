@@ -5,7 +5,7 @@ import SpinerLoading from "../components/SpinerLoading"
 import Card from "../Fragments/Card"
 import CONFIG from "../api/global/config"
 
-const TvList = () => {
+const Discover = () => {
     const [discoverTv, setDiscoverTv] = useState([])
     const [loading, setLoading] = useState(true);
     useEffect(() => {
@@ -41,4 +41,4 @@ const TvList = () => {
   )
 }
 
-export default TvList
+export default Discover

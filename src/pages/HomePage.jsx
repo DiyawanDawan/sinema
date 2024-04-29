@@ -1,13 +1,12 @@
-import Hero from "../components/Hero"
+
 import HomeCard from "../components/HomeCard"
-import MoviePlaying from "../components/NowPlaying"
+import TrandingAlls from "./TrandingAlls"
 
 const HomePage = () => {
   return (
-    <> 
-        <Hero/>
+    <>
         <HomeCard />
-        <MoviePlaying />
+        <TrandingAlls />
     </>
   )
 }

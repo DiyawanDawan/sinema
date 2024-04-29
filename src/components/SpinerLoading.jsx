@@ -4,9 +4,10 @@ const SpinerLoading = ({ loading }) => {
     const override = {
         display: 'block',
         margin: '100px auto',
+        padding: '4rem',
     }
     return (
-        <ClipLoader color="#4338ca" loading={loading} cssOverride={override}
+        <ClipLoader color="#B51B75" loading={loading} cssOverride={override}
             size={150} />
     )
 

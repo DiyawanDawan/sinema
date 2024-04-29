@@ -10,7 +10,7 @@ const Tranding = () => {
   const [tranding, setTranding] = useState([]);
   useEffect(() => {
     const getTranding = async () => {
-      const response = await DbSourse.Tranding();
+      const response = await DbSourse.TrandingMuvies();
 
       setTranding(response);
       setLoading(false);
