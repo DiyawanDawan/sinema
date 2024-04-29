@@ -2,7 +2,7 @@
 
 ### deploy
 
-https://cinemasfilm.netlify.app/discover
+https://cinemasfilm.netlify.app/
 
 ### Data
 
