@@ -28,7 +28,7 @@ const TrandingAlls = () => {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {alltranding.map((item) => {
-            console.log("data", item);
+            // console.log("data", item);
             // console.log(item);
             return (
               <Card key={item.id}>

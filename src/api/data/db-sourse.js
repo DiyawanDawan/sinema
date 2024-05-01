@@ -55,16 +55,7 @@ class DbSourse {
       console.log(error);
     }
   }
-  static async MuvieVideo(id) {
-    try {
-      const response = await fetch(API_ENDPOINT.DETAIL_Muvie_Video(id), options);
-      const responseJson = await response.json();
-      // console.log(responseJson);
-      return responseJson.results;
-    } catch (error) {
-      console.log(error);
-    }
-  }
+
   static async DiscoverTv() {
     try {
       const response = await fetch(API_ENDPOINT.DISCOVER_TV, options);
@@ -75,17 +66,16 @@ class DbSourse {
       console.log(error);
     }
   }
- 
-  // static async GenereMuvies() {
-  //   try {
-  //     const response = await fetch(API_ENDPOINT.GENERE_MUVIES, options);
-  //     const responseJson = await response.json();
-  //     console.log(responseJson);
-  //     return responseJson.results;
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }
+  static async Recomendation(id) {
+   try{
+    const response = await fetch(API_ENDPOINT.RECOMENDATION(id), options);
+    const responseJson = await response.json()
+    // console.log(responseJson.results);
+    return responseJson.results;
+   } catch (err) {
+    console.log('Eror cuy', err)
+   }
+  }
   static async Datail(id) {
     try {
       const response = await fetch(API_ENDPOINT.DETAIL(id), options);
