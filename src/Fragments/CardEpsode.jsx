@@ -14,13 +14,13 @@ const CardEpsode = ({text, name, media_type, children}) => {
     </div>
   );
 };
-const Img = ({poster_path}) => {
+const Img = ({poster_path, name}) => {
     return (
         <>
            <img
               className="w-full object-cover rounded-t-lg sepia-0 lazyload"
               src={poster_path}
-              alt=""
+              alt={name}
             />
         </>
     )

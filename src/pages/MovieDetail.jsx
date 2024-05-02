@@ -4,10 +4,12 @@ import SpinerLoading from "../components/SpinerLoading";
 import Card from "../Fragments/Card";
 import CONFIG from "../api/global/config";
 import DbSourse from "../api/data/db-sourse";
+import CardEpsode from "../Fragments/CardEpsode";
 
 const MovieDetail = () => {
   const [detail, setDetail] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [recomedarionMuvie, setRecomendationsMuvie] = useState([]);
   const { id } = useParams();
 
   useEffect(() => {
@@ -24,13 +26,21 @@ const MovieDetail = () => {
 
     getDataMovieDetail();
   }, [id]);
-  
+  useEffect(() => {
+    const getDataRecomendationMuvies = async () => {
+      const data = await DbSourse.RecomendationMuvie(id)
+      setRecomendationsMuvie(data)
+      // console.log('recomendatin muvie', data)
+    }
+    getDataRecomendationMuvies()
+  })
   return (
 
-      <div className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
+      <div className="mx-auto max-w-7xl items-center justify-between p-6 lg:px-8">
         {loading ? (
           <SpinerLoading loading={loading} />
         ) : (
+          <>
           <div>
             <Card>
               <Card.ImageCard
@@ -88,6 +98,36 @@ const MovieDetail = () => {
              
             </div>
           </div>
+          <div className="items-center justify-center bg-red-900 mt-11 mb-4">
+            <h2 className="text-center text-indigo-700 font-bold text-3xl p-4 uppercase border-b-2 border-indigo-400 border-solid">
+              Recomendation
+            </h2>
+          </div>
+          <div className="flex overflow-auto mt-4">
+            {recomedarionMuvie.length > 0 &&
+              recomedarionMuvie.map((item) => {
+                console.log('data', item);
+                return (
+                  <div key={item.id} className="gap-4 shadow-2xl">
+                  <CardEpsode
+                    
+                    name={item.title}
+                    media_type={item.media_type}
+                    text="Media : "
+                  >
+                    <CardEpsode.Img
+                      poster_path={CONFIG.BASE_IMAGE_URL + item.poster_path} name={item.name}
+                    />
+                    <CardEpsode.VoteAverage vote_average={item.vote_average} />
+                    <CardEpsode.Relesed air_date={item.air_date} />
+
+                    <Card.FooterCard id={item.id}></Card.FooterCard>
+                  </CardEpsode>
+              </div>
+                );
+              })}
+          </div>
+          </>
         )}
       </div>
    

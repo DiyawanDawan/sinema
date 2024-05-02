@@ -14,7 +14,7 @@ const Tranding = () => {
 
       setTranding(response);
       setLoading(false);
-      console.log(response);
+      // console.log(response);
     };
     getTranding();
   }, []);

@@ -76,6 +76,16 @@ class DbSourse {
     console.log('Eror cuy', err)
    }
   }
+  static async RecomendationMuvie(id) {
+   try{
+    const response = await fetch(API_ENDPOINT.RECOMENDATION_MUVIE(id), options);
+    const responseJson = await response.json()
+    // console.log(responseJson.results);
+    return responseJson.results;
+   } catch (err) {
+    console.log('Eror cuy', err)
+   }
+  }
   static async Datail(id) {
     try {
       const response = await fetch(API_ENDPOINT.DETAIL(id), options);

@@ -107,7 +107,7 @@ const TvSeries = () => {
                           <img
                             className="w-auto h-20"
                             src={CONFIG.BASE_IMAGE_URL + item.logo_path}
-                            alt=""
+                            alt= {item.name}
                           />
                         </>
                       );
@@ -117,24 +117,24 @@ const TvSeries = () => {
               </div>
             </div>
           </Card>
-
           <div className="flex overflow-auto mt-4 mb-4">
             {series.seasons.length > 0 &&
               series.seasons.map((item) => {
-                console.log(item);
+                // console.log(item);
                 return (
+                  <div key={item.id} className="border-2 rounded-sm border-indigo-600 border-solid mr-2">
                   <CardEpsode
-                    key={item.id}
                     name={item.name}
                     media_type={item.season_number}
                     text="Epsode : "
                   >
                     <CardEpsode.Img
-                      poster_path={CONFIG.BASE_IMAGE_URL + item.poster_path}
+                      poster_path={CONFIG.BASE_IMAGE_URL + item.poster_path} name={item.name}
                     />
                     <CardEpsode.Relesed air_date={item.air_date} />
                     <CardEpsode.VoteAverage vote_average={item.vote_average} />
                   </CardEpsode>
+          </div>
                 );
               })}
           </div>
@@ -155,7 +155,7 @@ const TvSeries = () => {
                     text="Media : "
                   >
                     <CardEpsode.Img
-                      poster_path={CONFIG.BASE_IMAGE_URL + item.poster_path}
+                      poster_path={CONFIG.BASE_IMAGE_URL + item.poster_path} name={item.name}
                     />
                     <CardEpsode.VoteAverage vote_average={item.vote_average} />
                     <CardEpsode.Relesed air_date={item.air_date} />
